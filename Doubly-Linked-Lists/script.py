@@ -29,6 +29,14 @@ class DoublyLinkedList:
         self.length = self.length + 1
         # Return the Doubly Linked List
         return self
+    
+    def __str__(self):
+        current = self.head
+        result = []
+        while current:
+            result.append(current.value)
+            current = current.next
+        return str(result)
 
 # Instantiation and testing
 DLL_obj = Node(12)
