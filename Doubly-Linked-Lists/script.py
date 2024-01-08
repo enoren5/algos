@@ -11,22 +11,24 @@ class DoublyLinkedList:
         self.tail = None
         self.length = 0
 
-    def append(self):
+    def append(self, value):
         # If the head property is null set the head and tail to be the newly created node
-        if head == None:
-            self.head = self.tail
+        newNode = Node(value)
+        if self.length == 0:
+            self.head = newNode
+            self.tail = newNode
         # If not... 
         else:
             # Set the next property on the tail to be that node
-            Node.next = self.tail
+            self.tail.next = newNode
             # Set the previous property on the newly created node to be the tail
-            Node.prev = Node.value
+            newNode.prev = self.tail
             # Set the tail to be the newly created node
-            self.tail = Node.value
-            # Increment the length
-            self.length = self.length + 1
-            # Return the Doubly Linked List
-            return self
+            self.tail = newNode
+        # Increment the length
+        self.length = self.length + 1
+        # Return the Doubly Linked List
+        return self
 
 # Instantiation and testing
 DLL_obj = Node(12)
