@@ -1,5 +1,3 @@
-# [ 1, 3, 4, 6, 8, 9, 11, 12, 15, 16, 17, 18, 19 ]
-
 def binary_seek(ordered_list, value):
     # This function accepts a sorted array and a value
     # Create a left pointer at the start of the array, and a right pointer at the end of the array
@@ -8,21 +6,18 @@ def binary_seek(ordered_list, value):
     # While the left pointer comes before the right pointer:
     while left_pointer < right_pointer:
          # Create a pointer in the middle:
-        center_pointer = int(len(ordered_list/2))
+        center_pointer = int(len(ordered_list)/2)
         # If you find the value you want, return the index pointer:
         if center_pointer == value:
-            return f"found at: {center_pointer}"
+            return f"Found at: {center_pointer}"
+        #If the value is too small, move the left pointer down and run the function again:
         elif center_pointer < (ordered_list[left_pointer] < ordered_list[center_pointer]):
             new_list = ordered_list[left_pointer:center_pointer]
             return binary_seek(new_list, value)
+        # If the value is too large, move the right pointer up and run the function again:
         elif center_pointer < (ordered_list[center_pointer] < ordered_list[right_pointer]):
             new_list = ordered_list[center_pointer:right_pointer]
             return binary_seek(new_list, value)
-        return "not present"
+    return "Not present"
 
-'''
-If you find the value you want, return the index
-If the value is too small, move the left pointer up
-If the value is too large, move the right pointer down
-
-'''
+# [ 1, 3, 4, 6, 8, 9, 11, 12, 15, 16, 17, 18, 19 ]
