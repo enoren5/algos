@@ -2,9 +2,11 @@ def binary_seek(arr,elem):
     start = 0
     end = arr[-1]
     middle = (start + end) // 2
+    print(start, middle, end)
     while (arr[middle] != elem) and (start <= end):
         print(start, middle, end)
         if elem < arr[middle]:
+            print(start, middle)
             end = middle -1
         else:
             start = middle + 1
