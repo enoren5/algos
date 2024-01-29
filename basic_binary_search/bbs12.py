@@ -2,15 +2,15 @@ def binary_seek(ordered_list, value):
     left = 0
     right = len(ordered_list) - 1
     center = len(ordered_list) // 2
-    if ordered_list[center] == value:
+    if value == ordered_list[center]:
         return f"Found at: {center}"
-    elif ordered_list[left] < value < ordered_list[center]:
-        right = ordered_list[center]
+    elif value < ordered_list[center]:
+        right = center
         new_list = ordered_list[left:center]
         # center = len(new_list) // 2
         return binary_seek(new_list, value)
-    elif ordered_list[right] < value < ordered_list[center]:
-        left = ordered_list[center]
+    else:
+        left = center
         new_list = ordered_list[center:right]
         # center = len(new_list) // 2
         return binary_seek(new_list, value)

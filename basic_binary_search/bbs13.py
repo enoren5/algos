@@ -2,18 +2,19 @@ def binary_seek(ordered_list, value):
     left = 0
     right = len(ordered_list) - 1
     center = len(ordered_list) // 2
-    if ordered_list[center] == value:
+    if value == ordered_list[center]:
         return f"Found at: {center}"
-    elif ordered_list[left] < value < ordered_list[center]:
-        right = ordered_list[center]
+    elif value < ordered_list[center]:
+        right = center
         new_list = ordered_list[left:center]
         # center = len(new_list) // 2
         return binary_seek(new_list, value)
-    elif ordered_list[right] < value < ordered_list[center]:
-        left = ordered_list[center]
+    elif value > ordered_list[center]:
+        left = center
         new_list = ordered_list[center:right]
         # center = len(new_list) // 2
         return binary_seek(new_list, value)
-    return "Not present"
+    else:
+        return "Not present"
 
-print(binary_seek([101, 444, 567, 812, 999, 1101, 1232, 1522, 1684, 222234],567))
+print(binary_seek([101, 444, 567, 812, 999, 1101, 1232, 1522, 1684, 222234],9990000))
