@@ -1,4 +1,4 @@
-def binary_seek(array,target):
+def binary_seek(target,array):
     start = 0
     end = len(array)-1
     middle = (start + end) // 2
@@ -23,4 +23,4 @@ def binary_seek(array,target):
         print(start, middle, end)
         return print(f'Not Found')
 
-print(binary_seek([ 1, 3, 4, 6, 8, 9, 11, 12, 15, 16, 17, 18, 19 ],6))
+print(binary_seek(497,[ 1, 3, 4, 6, 8, 9, 11, 12, 15, 16, 17, 18, 19,496,2222,]))
