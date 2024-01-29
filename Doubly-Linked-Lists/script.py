@@ -39,9 +39,12 @@ class DoublyLinkedList:
         return str(result)
 
 # Instantiation and testing
-DLL_obj = Node(12)
+DLL_obj = DoublyLinkedList()
 print(DLL_obj)
-DLL_obj.next = 13
-print(DLL_obj.next)
-DLL_obj.prev = 11
-print(DLL_obj.prev)
+DLL_obj.append(7)
+DLL_obj.append(12)
+DLL_obj.append(22)
+print(DLL_obj)
+DLL_obj.append(11)
+print(DLL_obj)
+print(DLL_obj)
