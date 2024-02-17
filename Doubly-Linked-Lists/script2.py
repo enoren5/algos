@@ -17,15 +17,15 @@ class DoublyLinkedList:
         newNode.prev = self.tail
         self.tail = newNode
         return self
-    
+    ''' 
     def __str__(self):
-        current = self.head
+        current = self.next
         result = []
-        while current:
+        while current != self:
             result.append(current.value)
             current = current.next
         return str(result)
-
+    '''
 # Instantiation and testing
 DLL_obj = DoublyLinkedList()
 print(DLL_obj)
