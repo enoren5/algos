@@ -33,7 +33,7 @@ class DoublyLinkedList:
     def __str__(self):
         current = self.head
         result = []
-        while current != self:
+        while current:
             result.add_right(current.value)
             current = current.next
         return str(result)
