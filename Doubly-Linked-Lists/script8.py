@@ -52,7 +52,24 @@ class DoublyLinkedList:
         self.length = self.length - 1
         # Return the value removed
         return temp
-    
+
+
+    def add_left(self, value):
+        # If the head property is null set the head and tail to be the newly created node
+        newNode = Node(value) # If the length is 0
+        if self.length == 0:
+            self.head = newNode # Set the head to be the new node
+            self.tail = newNode # Set the tail to be the new node
+        else: # Oherwise... 
+            # Set the prev property on the head of the list to be the new node
+            self.head.prev = newNode
+            # Set the next property on the new node to be the head property
+            newNode.next = self.head
+            # Update the head to be the new node
+            self.head = newNode
+        self.length = self.length + 1 # Increment the length
+        return self
+
 
     def pop_left(self):
         # If length is 0, return undefined
@@ -101,8 +118,10 @@ DLL_obj.add_right(22)
 print(DLL_obj)
 DLL_obj.add_right(11)
 print(DLL_obj)
-DLL_obj.pop_right()
-DLL_obj.pop_right()
+# DLL_obj.pop_right()
+# DLL_obj.pop_right()
 print(DLL_obj)
-DLL_obj.pop_left()
+# DLL_obj.pop_left()
+print(DLL_obj)
+DLL_obj.add_left(496)
 print(DLL_obj)
