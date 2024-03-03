@@ -127,9 +127,31 @@ class DoublyLinkedList:
             return True
         return False
         
+
+    def cust_insert(self, item_location, new_value):
+        if item_location < 0 or item_location > self.length:
+           return None
+        elif item_location == 0:
+            return self.add_left(new_value)
+        elif item_location == self.length:
+           self.add_right(new_value)
+           self.length += 1 
+           # print(self.length)
+           return self
+        new_node = Node(new_value)
+        before_node = self.cust_get(item_location-1)
+        after_node = before_node.next
+        before_node.next = new_node
+        new_node.prev = before_node
+        new_node.next = after_node
+        after_node.prev = new_node
+        self.length = self.length + 1
+        return True
+
+
     def __str__(self):
         if self.length == 0:
-            return "Doubly Linked List: []"
+            return "Empty DLL for intialization"
 
         current = self.head
         elements = []
@@ -138,11 +160,7 @@ class DoublyLinkedList:
             current = current.next
 
         return "Doubly Linked List: [" + " <-> ".join(elements) + "]"
-    
-
-
-        
-
+      
 
 # Instantiation and testing
     
@@ -152,6 +170,15 @@ DLL_obj.add_right(7)
 DLL_obj.add_right(12)
 DLL_obj.add_right(22)
 print(DLL_obj)
+DLL_obj.cust_insert(0,999)
+print(DLL_obj)
+DLL_obj.cust_insert(4,90099)
+print(DLL_obj)
+DLL_obj.cust_insert(2,"'Custom insert test'")
+print(DLL_obj)
+
+'''
+
 DLL_obj.add_right(11)
 print(DLL_obj)
 # DLL_obj.pop_right()
@@ -167,5 +194,8 @@ DLL_obj.add_left(93)
 DLL_obj.add_right(89)
 print(DLL_obj)
 print(DLL_obj.cust_get(5))
+print(DLL_obj)
 DLL_obj.cust_set(0,18)
 print(DLL_obj)
+
+'''
