@@ -147,8 +147,23 @@ class DoublyLinkedList:
         after_node.prev = new_node
         self.length = self.length + 1
         return True
+    
 
-
+    def cust_remove(self, item_location):
+        if item_location < 0: # or item_location > self.length:
+           return None
+        elif item_location == 0:
+            return self.pop_left()
+        elif item_location == (self.length-1):
+           return self.pop_right()
+        removed_node = self.cust_get(item_location)
+        removed_node.prev.next = removed_node.next
+        removed_node.next.prev = removed_node.prev
+        removed_node.next = None
+        removed_node.prev = None
+        self.length = self.length - 1
+        return removed_node
+    
     def __str__(self):
         if self.length == 0:
             return "Empty DLL for intialization"
@@ -176,9 +191,13 @@ DLL_obj.cust_insert(4,90099)
 print(DLL_obj)
 DLL_obj.cust_insert(2,"'Custom insert test'")
 print(DLL_obj)
+# DLL_obj.cust_remove(2)
+print(DLL_obj.cust_remove(2))
+print(DLL_obj)
+
+
 
 '''
-
 DLL_obj.add_right(11)
 print(DLL_obj)
 # DLL_obj.pop_right()
