@@ -108,6 +108,19 @@ class DoublyLinkedList:
 
         return "Doubly Linked List: [" + " <-> ".join(elements) + "]"
     
+
+    def cust_get(self, item_location):
+        if item_location < 0 or item_location >= self.length:
+            return None
+        if item_location <= self.length // 2:
+            return item_location
+        if item_location >= self.length // 2:
+            # for item in 
+            return item_location
+
+
+
+
 # Instantiation and testing
     
 DLL_obj = DoublyLinkedList()
