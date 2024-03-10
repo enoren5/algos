@@ -36,6 +36,14 @@ class Stack:
             self.size = self.size - 1
         return temp.value
     
+    
+    def add_to_queue(self, value):
+        pass
+
+
+    def remove_from_queue(self):
+        pass
+
 
     def __str__(self):
         if self.size == 0:
