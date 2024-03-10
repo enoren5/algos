@@ -21,7 +21,7 @@ class Stack:
             self.first = new_node
             self.first.next = temp 
             self.size += 1
-        return self 
+        return self.size
     
     def remove_from_bottom(self):
         if self.size == 0: return None
@@ -32,7 +32,7 @@ class Stack:
         if self.size > 1:
             self.first = self.first.next
             self.size = self.size - 1
-            return temp
+        return temp.value
 
     def __str__(self):
         if self.size == 0:
@@ -50,9 +50,11 @@ SAQ = Stack()
 print(SAQ)
 SAQ.place_on_top(7)
 SAQ.place_on_top(12)
+SAQ.place_on_top(12)
+print(f'Length of stack so far: {SAQ.place_on_top(12)}')
 print(SAQ)
 SAQ.place_on_top(22)
 print(SAQ)
-# print(SAQ.remove_from_bottom())
+print(f'First item removed from bottom: {SAQ.remove_from_bottom()}')
 SAQ.remove_from_bottom()
 print(SAQ)
