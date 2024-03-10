@@ -25,6 +25,11 @@ class Stack:
             self.size += 1
         return self #= self.size + 1  
     
+    def remove_from_bottom(self, value):
+        pass
+    
+    
+    
     '''
     def __str__(self):
     
