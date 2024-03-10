@@ -6,7 +6,6 @@ class Node:
         
 class Stack:
     def __init__(self):
-        # new_node = Node(value)
         self.first = None
         self.last = None
         self.size = 0
@@ -17,32 +16,27 @@ class Stack:
             self.first = new_node
             self.last = new_node
             self.size += 1
-            # return self
-        else: #elif self.size >= 1:
+        else: 
             temp = self.first
             self.first = new_node
             self.first.next = temp 
             self.size += 1
-        return self #= self.size + 1  
+        return self 
     
-    def remove_from_bottom(self, value):
-        pass
-    
-    
-    
-    '''
-    def __str__(self):
-    
-        current = self.first
-        values = []
-        while current:
-            values.append(str(current.value))
-            current = current.next
-    '''
-    def __str__(self):
-        #if self.size == 0:
-        #    return "Empty Stack for intialization"
+    def remove_from_bottom(self):
+        if self.size == 0: return None
+        temp = self.first
+        if self.size == 1:
+            self.first = None
+            self.last = None
+        if self.size > 1:
+            self.first = self.first.next
+            self.size = self.size - 1
+            return temp
 
+    def __str__(self):
+        if self.size == 0:
+            return "Empty Stack for intialization"
         current = self.first
         elements = []
         while current:
@@ -58,4 +52,7 @@ SAQ.place_on_top(7)
 SAQ.place_on_top(12)
 print(SAQ)
 SAQ.place_on_top(22)
+print(SAQ)
+# print(SAQ.remove_from_bottom())
+SAQ.remove_from_bottom()
 print(SAQ)
