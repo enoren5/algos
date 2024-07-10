@@ -14,7 +14,7 @@ class BST:
         newNode = Node(value)
         if self.root == None:
             self.root = newNode
-            return self
+            return None
         temp = self.root
         while True:
             if newNode.value == temp.value:
@@ -22,12 +22,12 @@ class BST:
             if newNode.value < temp.value:
                 if temp.left == None:
                     temp.left = newNode
-                    return self
+                    return None
                 temp = temp.left
             else:
                 if temp.right == None:
                     temp.right = newNode
-                    return self
+                    return None
                 temp = temp.right
         
     def __str__(self):
