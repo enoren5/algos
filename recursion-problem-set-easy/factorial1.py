@@ -6,10 +6,14 @@ Write a function factorial which accepts a number and returns the factorial of t
 // factorial(4) // 24
 // factorial(7) // 5040
 
-function factorial(){
-   
+function factorial(){ 
 }
-
-
-
 '''
+
+def my_factorial(n):
+    if n == 0:
+        return True
+    return n*my_factorial(n-1)
+    # return my_factorial(my_factorial(n-1))
+
+print(my_factorial(7))
