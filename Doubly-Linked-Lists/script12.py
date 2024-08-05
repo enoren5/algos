@@ -172,11 +172,12 @@ class DoublyLinkedList:
                 temp = self.tail
                 # Reassign prev as new tail
                 self.tail = self.tail.prev 
-                # Set the new tail's next to null
-                self.tail.next = None
-                # self.length = self.length - 1
-                self.head = temp
-            return self
+                # Set the new tail's next to head
+                # self.tail.next = temp
+                temp.next = self.head
+                # self.head.prev = self.tail
+                self.tail.next = self.head
+            return 
 
         elif variance < 0:
             for iteration in range(0,variance):
