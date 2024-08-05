@@ -164,6 +164,37 @@ class DoublyLinkedList:
         self.length = self.length - 1
         return removed_node
     
+    def shift_linked_list(self, variance):
+
+        if variance > 0:
+            for iteration in range(0,variance):
+                # Store the current tail in a variable to add later
+                temp = self.tail
+                # Reassign prev as new tail
+                self.tail = self.tail.prev 
+                # Set the new tail's next to null
+                self.tail.next = None
+                # self.length = self.length - 1
+                self.head = temp
+            return self
+
+        elif variance < 0:
+            for iteration in range(0,variance):
+                self.tail = self.head
+                # self.length = self.length + 1
+            return self
+
+        elif variance == 0:
+            pass
+
+        # Set the previous property on the newly created node to be the tail
+        #newNode.prev = self.tail
+        # Set the tail to be the newly created node
+        #self.tail = newNode
+        # Increment the length
+        #
+        # Return the Doubly Linked List
+        # return 
     
     def __str__(self):
         if self.length == 0:
@@ -181,31 +212,14 @@ class DoublyLinkedList:
 # Instantiation and testing
     
 DLL_obj = DoublyLinkedList()
-print(DLL_obj)
 DLL_obj.add_right(7)
 DLL_obj.add_right(12)
 DLL_obj.add_right(22)
-print(DLL_obj)
 DLL_obj.cust_insert(0,999)
-print(DLL_obj)
 DLL_obj.cust_insert(4,90099)
-print(DLL_obj)
 DLL_obj.cust_insert(2,"'Custom insert test'")
 print(DLL_obj)
-# DLL_obj.cust_remove(2)
-print(DLL_obj.cust_remove(2))
-
-print(DLL_obj)
-
-def shift_linked_list(DLL_obj,k):
-    # if k > 0:
-    for iteration in range(0,k):
-        DLL_obj.cust_insert(0, DLL_obj.tail)
-        DLL_obj.cust_remove(len(DLL_obj)-1)
-    return DLL_obj
-
-shift_linked_list(DLL_obj,2)
-
+DLL_obj.shift_linked_list(2)
 print(DLL_obj)
 
 
