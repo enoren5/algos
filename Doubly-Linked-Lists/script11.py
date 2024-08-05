@@ -169,13 +169,15 @@ class DoublyLinkedList:
         if variance > 0:
             for iteration in range(0,variance):
                 self.head = self.tail 
+                self.head.prev = self.tail
+                self.tail.next = self.head
                 # self.length = self.length + 1
-            return self
+            return 
         elif variance < 0:
             for iteration in range(0,variance):
                 self.tail = self.head
                 # self.length = self.length + 1
-            return self
+            return 
         elif variance == 0:
             pass
     
@@ -203,7 +205,7 @@ DLL_obj.cust_insert(0,999)
 DLL_obj.cust_insert(4,90099)
 DLL_obj.cust_insert(2,"'Custom insert test'")
 print(DLL_obj)
-DLL_obj.shift_linked_list(5)
+DLL_obj.shift_linked_list(2)
 print(DLL_obj)
 
 '''
