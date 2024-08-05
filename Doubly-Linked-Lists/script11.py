@@ -164,9 +164,21 @@ class DoublyLinkedList:
         self.length = self.length - 1
         return removed_node
     
-    def shift_linked_list(head,k):
-        # code
-        pass
+
+    def shift_linked_list(self, variance):
+        if variance > 0:
+            for iteration in range(0,variance):
+                self.head = self.tail 
+                # self.length = self.length + 1
+            return self
+        elif variance < 0:
+            for iteration in range(0,variance):
+                self.tail = self.head
+                # self.length = self.length + 1
+            return self
+        elif variance == 0:
+            pass
+    
     
     def __str__(self):
         if self.length == 0:
@@ -184,41 +196,44 @@ class DoublyLinkedList:
 # Instantiation and testing
     
 DLL_obj = DoublyLinkedList()
-print(DLL_obj)
 DLL_obj.add_right(7)
 DLL_obj.add_right(12)
 DLL_obj.add_right(22)
-print(DLL_obj)
 DLL_obj.cust_insert(0,999)
-print(DLL_obj)
 DLL_obj.cust_insert(4,90099)
-print(DLL_obj)
 DLL_obj.cust_insert(2,"'Custom insert test'")
 print(DLL_obj)
-# DLL_obj.cust_remove(2)
-print(DLL_obj.cust_remove(2))
+DLL_obj.shift_linked_list(5)
 print(DLL_obj)
 
+'''
+def shift_linked_list(DLL_obj,k):
+    # if k > 0:
+    for iteration in range(0,k):
+        DLL_obj.cust_insert(0, DLL_obj.tail)
+        DLL_obj.cust_remove(len(DLL_obj)-1)
+    return DLL_obj
+'''
 
 
 '''
-DLL_obj.add_right(11)
-print(DLL_obj)
-# DLL_obj.pop_right()
-# DLL_obj.pop_right()
-print(DLL_obj)
-# DLL_obj.pop_left()
-print(DLL_obj)
-DLL_obj.add_left(496)
-print(DLL_obj)
-DLL_obj.add_left(777)
-DLL_obj.add_left(66)
-DLL_obj.add_left(93)
-DLL_obj.add_right(89)
-print(DLL_obj)
-print(DLL_obj.cust_get(5))
-print(DLL_obj)
-DLL_obj.cust_set(0,18)
-print(DLL_obj)
+def shift_linked_list(DLL_obj,k):
+    if k > 0:
+        for iteration in range(0,k):
+            DLL_obj.cust_insert(0, DLL_obj.pop_right())
+            DLL_obj.cust_remove(len(DLL_obj)-1)
+        return DLL_obj
 
+shift_linked_list(DLL_obj,2)
+
+print(DLL_obj)
+'''
+
+'''
+def shift_linked_list(DLL_obj,k):
+    if k > 0:
+        for iteration in range(0,k):
+            DLL_obj.add_left(DLL_obj[-1])
+            DLL_obj.pop_right(DLL_obj[0])
+        return DLL_obj
 '''
