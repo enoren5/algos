@@ -9,3 +9,11 @@ function power(){
     
 }
 '''
+def power(base, exponent):
+    if exponent == 0:
+        return 1
+    if exponent > 0:
+        return base * power(base,(exponent-1))
+
+print(power(2,4))
+
