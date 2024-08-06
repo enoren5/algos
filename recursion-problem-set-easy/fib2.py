@@ -17,7 +17,7 @@ def fib(n):
   if n == 1:
     return 1
   else:
-    return (n-1) + (n-2)
+    return (n+fib(n))
 
 print(fib(4))
 
