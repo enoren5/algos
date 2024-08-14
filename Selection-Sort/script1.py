@@ -13,7 +13,7 @@ def sorting_by_selection(arr):
                 arr[minimum], arr[i] = arr[minimum], arr[i]
             else:
                 continue
-    return arr
+        return arr
 
 sorted_list = sorting_by_selection(arr)
 
