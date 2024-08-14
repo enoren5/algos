@@ -11,9 +11,9 @@ def sorting_by_selection(arr):
             if element1 < element2:
                 minimum = element1
                 arr[minimum], arr[i] = arr[minimum], arr[i]
-            else:
+            else: 
                 continue
-        return arr
+    return arr
 
 sorted_list = sorting_by_selection(arr)
 
