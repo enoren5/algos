@@ -7,7 +7,7 @@ arr = [5,3,4,1,2]
 print(f"Original list: {arr}")
 
 def bubble(arr): 
-    for iteration in range(0,len(arr)):
+    for iteration in reversed(range(len(arr))):
         for i in range(iteration):
             el1 = arr[i]
             el2 = arr[i+1]
