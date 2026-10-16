@@ -164,6 +164,10 @@ class DoublyLinkedList:
         self.length = self.length - 1
         return removed_node
     
+    def shift_linked_list(head,k):
+        # code
+        pass
+    
     def __str__(self):
         if self.length == 0:
             return "Empty DLL for intialization"
