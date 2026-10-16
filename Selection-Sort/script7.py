@@ -13,9 +13,9 @@ def sorting_by_selection(arr):
             #print(f"        Inner loop iteration: {j=}, {smallest=}, {arr=}")
             if arr[j] < smallest:
                 print(f'        Swapping entries: {arr[j]=}, {smallest=}')
-                arr[smallest], arr[j] = arr[j], arr[smallest]
+                smallest, arr[j] = arr[j], smallest
                 print(f'        New: {arr=}')
-        arr[i] = arr[smallest]
+        arr[i] = smallest
     return arr
 
 sorted_list = sorting_by_selection(arr)
